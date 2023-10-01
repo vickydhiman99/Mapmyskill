@@ -1,0 +1,6 @@
+#dashboard{
+    height: 100vh;
+    width: calc(100% - 300px);
+    position: absolute;
+    display: inline-block;
+}

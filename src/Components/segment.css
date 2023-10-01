@@ -1,0 +1,195 @@
+/* #segment{
+    position: relative;
+    align-items: center;
+    margin-top: 0rem;
+    margin-right: 10rem;
+    max-height: 80vh;
+    overflow-y: scroll;
+    width: 70%;
+}
+
+#segment .form_container {
+    height: calc(91%);
+    width: 300px;
+    margin-top: 65px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: -5px 1px 6px 0px #ac9898;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 11px 20px 0px 21px;
+    align-items: inherit;
+}
+
+#segment .btctrl{
+    color: aliceblue;
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    background-color: #236ea9;
+    border-radius: 5px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.theading {
+    color: #b266ad;
+}
+
+.theadbackground {
+    background-color: #0f7181;
+    color: white;
+}
+
+.edit {
+    font-style: 15px;
+    color: #0f7181;
+    float: right;
+    margin-left: 20px;
+
+}
+
+.delete {
+    font-style: 15px;
+    color: red;
+    float: right;
+}
+
+.tab {
+    position: relative;
+    align-items: center;
+    margin-top: 0rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    padding: 58px 60px 43px 60px;
+    box-shadow: 4px 6px 15px 3px #766e6e;
+    max-height: 80vh;
+    overflow-y: scroll;
+
+}
+
+.r-btn {
+    position: absolute;
+    color: white;
+    top: 62px;
+    right: 71px;
+    background-color: #0f7181;
+    border: none;
+    padding: 7px 28px;
+    font-weight: 700;
+    border-radius: 8px;
+
+}
+
+.form_container {
+    height: calc(91%);
+    width: 300px;
+    margin-top: 65px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: -5px 1px 6px 0px #ac9898;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 11px 20px 0px 21px;
+    align-items: inherit;
+}
+
+.form_container button {
+    width: 0px;
+    background: #0f7181;
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 129px;
+    position: absolute;
+    bottom: 10px;
+}
+.form_container h1{
+    font-size: 1.5rem;
+    color: #b266ad;
+}
+
+.form_container h2 {
+    font-size: 15px;
+    font-weight: 400;
+    color: red;
+    position: absolute;
+    bottom: 45px;
+}
+.confirm{
+    height: 200px;
+    width: 350px;
+    position: absolute;
+    display: inline-block;
+    top: calc((100% - 200px)/2);
+    left: calc((100% - 350px)/2);
+    background:white;
+    box-shadow: 0px 0px 4px 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon_container{
+    height: 80px;
+    width: 80px;
+    background: #f3f6f9;
+    border-radius: 50%;
+    margin-top: -36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deletee{
+    color: red;
+    font-size: 63px !important;
+}
+.editt{
+    color:  #0f7181;
+    font-size: 63px !important;  
+}
+.confirm h5{
+    margin-top: 18px;
+}
+.confirm p{
+    font-size: 14px;
+    margin-top: 3px;
+}
+.btn_holder{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 6px 11px;
+    display: flex;
+    gap: 7px;
+}
+.btn_holder button{
+    padding: 5px 10px;
+    background: transparent;
+    border: unset;
+}
+.btn_holder button:nth-child(2){
+    background: red;
+    color: white;
+}
+.btn_holder button:nth-child(3){
+    background: #0f7181;
+    color: white;
+}

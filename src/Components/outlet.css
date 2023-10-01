@@ -1,0 +1,7 @@
+#outlet{
+    height: calc(100vh - 75px);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+}
