@@ -1,14 +1,33 @@
-import React, { useState, } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./user.css"
 import { TextField, Button } from '@mui/material';
+import instance from "../config/axios.config"
+
 // --------------------------------material icons start---------------------//
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+
 // --------------------------------material icons end-----------------------//
 
 const User = () => {
 
   const [display, setDisplay] = useState(false);
+  const [segment, setSegment] = useState([])
+
+  function getSegment() {
+    instance.get('get/subject')
+      .then(response => {
+        setSegment(response.data.results)
+        console.log(response.data.results)
+      })
+      .catch(error => {
+        console.error('segment getApi failled!', error);
+      });
+  }
+
+  useEffect(() => {
+    getSegment()
+  }, [])
 
   return (
     <div>
@@ -30,18 +49,20 @@ const User = () => {
         <table className='table table-bordered table-striped'>
           <tr className='text-light  bg-info'>
             <th className='text-center'><input type="checkbox" />ID</th>
-            <th className='text-center'>Name</th>
-            <th className='text-center'>Email</th>
-            <th className='text-center'>Password</th>
+            <th className='text-center'>Segment Name</th>
             <th className='text-center'>Action</th>
           </tr>
-          <tr>
-            <td className='text-center'><input type="checkbox" />1</td>
-            <td className='text-center'>Vicky kumar</td>
-            <td className='text-center'>abc@gmail.com</td>
-            <td className='text-center'>abc@99</td>
-            <td className='text-center'><EditIcon className='text-primary mx-4 edit' /> <DeleteIcon className='text-danger delete' /></td>
-          </tr>
+          {
+            segment.map((res) => (
+              <tr key={res.subjectid}>
+                <td className='text-center'><input type="checkbox" />{res.subjectid}</td>
+                <td className='text-center'>{res.name}</td>
+                <td className='text-center'><EditIcon className='text-primary mx-4 edit' /> <DeleteIcon className='text-danger delete' /></td>
+              </tr>
+            ))
+          }
+
+
         </table>
       </div>
     </div>

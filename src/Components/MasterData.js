@@ -77,7 +77,7 @@ const MasterData = () => {
 
 
     return (
-        <div style={{ border: '1px solid grey',borderRadius:'10px', margin: '0 10px', padding: '10px', }}>
+        <div style={{ border: '1px solid grey',borderRadius:'10px', margin: '0 10px', padding: '10px',maxHeight:'85vh', overflowY:'hidden' }}>
             <Grid container item spacing={3} xs={12}>
 
                 <Grid item lg={6} md={12} sm={12} >
