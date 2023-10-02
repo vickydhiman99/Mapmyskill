@@ -5,7 +5,6 @@ import Contact from './Contact'
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
   useEffect(() => {
 
     setEmail(localStorage.getItem("uemail"))
@@ -15,7 +14,7 @@ const Login = () => {
   return (
     <div id='login' className='login'>
       {
-        email === "vicky.kumar2019@gift.edu.in" && pass === "dhiman@99" ? <Contact/> : <SignOutStack />
+        email === "abc@gmail.com" && pass === "abc@99" ? <Contact/> : <SignOutStack />
       }
 
     

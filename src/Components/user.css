@@ -1,0 +1,37 @@
+#user{
+    width: 75%;
+    float: left;
+    max-height: 45vh;
+    overflow-y: scroll;
+}
+
+#user .btncls {
+    border: none;
+    color: white;
+    font-style: 15px;
+    font-weight: 600;
+    background-color: #129abb;
+    padding: 10px 30.5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 75px;
+    right: 61px;
+}
+
+
+.form_container {
+    
+    height: calc(100%);
+    gap: 10px;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: -3px 0px 0px 0px #b19393;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
