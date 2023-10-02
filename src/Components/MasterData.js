@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import EditIcon from '@mui/icons-material/Edit';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemIcon from '@mui/material/ListItemIcon';
+
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
@@ -13,57 +13,30 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
+import instance from "../config/axios.config"
 
 
-const data = [
-    {
-        con: 'Single-line item-1'
-    },
-    {
-        con: 'Single-line item-2'
-    },
-    {
-        con: 'Single-line item-3'
-    },
-    {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    }, {
-        con: 'Single-line item-3'
-    },
-];
+
 
 
 const MasterData = () => {
+
+    const [masterData, setMasterdata] = useState([])
+
+    function Getmasterdata() {
+        instance.get('get/systemList')
+            .then(response => {
+                setMasterdata(response.data)
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.error('segment getApi failled!', error);
+            });
+    }
+
+    useEffect(() => {
+        Getmasterdata()
+    }, [])
 
 
 
@@ -77,7 +50,7 @@ const MasterData = () => {
 
 
     return (
-        <div style={{ border: '1px solid grey',borderRadius:'10px', margin: '0 10px', padding: '10px',maxHeight:'85vh', overflowY:'hidden' }}>
+        <div style={{ border: '1px solid grey', borderRadius: '10px', margin: '0 10px', padding: '10px', maxHeight: '85vh', overflowY: 'hidden' }}>
             <Grid container item spacing={3} xs={12}>
 
                 <Grid item lg={6} md={12} sm={12} >
@@ -86,10 +59,10 @@ const MasterData = () => {
                             <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
                                 Master Data:-
                             </Typography>
-                            <Demo style={{ maxHeight:'60vh', overflowY:'scroll', scrollBehavior:'smooth'}}>
+                            <Demo style={{ maxHeight: '60vh', overflowY: 'scroll', scrollBehavior: 'smooth' }}>
                                 {
-                                    data.map((res) => (
-                                        <List dense={dense} className='list-group'>
+                                    masterData.map((res) => (
+                                        <List key={res.listId} dense={dense} className='list-group'>
                                             <ListItem
                                                 className='list-group-item'
                                                 secondaryAction={
@@ -104,12 +77,12 @@ const MasterData = () => {
                                                 }
                                             >
                                                 <ListItemAvatar>
-                                                    <Avatar style={{backgroundColor:'#2196F3'}}>
+                                                    <Avatar >
                                                         <FolderIcon />
                                                     </Avatar>
                                                 </ListItemAvatar>
                                                 <ListItemText
-                                                    primary={res.con}
+                                                    primary={res.listName}
                                                     secondary={secondary ? 'Secondary text' : null}
                                                 />
                                             </ListItem>
@@ -128,10 +101,10 @@ const MasterData = () => {
                             <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
                                 Master List Item:-
                             </Typography>
-                            <Demo style={{ maxHeight:'60vh', overflowY:'scroll', scrollBehavior:'smooth'}}>
+                            <Demo style={{ maxHeight: '60vh', overflowY: 'scroll', scrollBehavior: 'smooth' }}>
                                 {
-                                    data.map((res) => (
-                                        <List dense={dense} className='list-group'>
+                                    masterData.map((res) => (
+                                        <List key={res.listId} dense={dense} className='list-group'>
                                             <ListItem
                                                 className='list-group-item'
                                                 secondaryAction={
@@ -148,12 +121,12 @@ const MasterData = () => {
                                                 }
                                             >
                                                 <ListItemAvatar>
-                                                    <Avatar style={{backgroundColor:'#2196F3'}}>
+                                                    <Avatar >
                                                         <FolderIcon />
                                                     </Avatar>
                                                 </ListItemAvatar>
                                                 <ListItemText
-                                                    primary={res.con}
+                                                    primary={res.listName}
                                                     secondary={secondary ? 'Secondary text' : null}
                                                 />
                                             </ListItem>
